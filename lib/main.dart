@@ -79,8 +79,8 @@ Stream<String> ask(List<Map> msgs) async* {
       try {
         final j = jsonDecode(d);
         final s = isG
-            ? j['candidates']?[0]?['content']?['parts']?[0]?['text']
-            : j['choices']?[0]?['delta']?['content'];
+            ? j['candidates'][0]['content']['parts'][0]['text']
+            : j['choices'][0]['delta']['content'];
         if (s is String) yield s;
       } catch (_) {}
     }
